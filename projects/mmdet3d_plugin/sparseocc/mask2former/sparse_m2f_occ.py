@@ -660,15 +660,12 @@ class SparseMask2FormerOccHead(MaskFormerHead):
 
         ### method 2
         coarse_occ_ = rearrange(coarse_occ, 'b c h w z-> b (h w z) c')
-        # print(coarse_occ_.shape)
         nonempty_prob = 1 - F.softmax(coarse_occ_, dim=-1)[..., 0]  # [B, N]
-        # print(nonempty_prob.shape)
         nonempty_indices = torch.topk(nonempty_prob, k=int(W*H*D*0.6), dim=1)[1]  # [B, K]
         mask_features_flatten = rearrange(mask_features, 'b c h w z -> b c (h w z)')
 
         nonempty_indices_expanded = nonempty_indices.squeeze(1).repeat(1, mask_features.shape[1], 1)  # [B, C, K]
         nonempty_feats = torch.gather(mask_features_flatten, dim=2, index=nonempty_indices_expanded.to(torch.int64))
-        # print(nonempty_feats.shape)
         nonempty_feats = rearrange(nonempty_feats, 'b c k -> (b k) c')
 
 
