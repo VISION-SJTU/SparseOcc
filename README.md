@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SparseOcc: Rethinking Sparse Latent Representation for Vision-Based Semantic Occupancy Prediction (CVPR 2024)
 
 ## News
@@ -61,7 +60,3 @@ If you find this project helpful, please consider giving this repo a star or cit
   year={2024}
 }
 ```
-=======
-# SparseOcc
-Official implementation for 'SparseOcc: Rethinking Sparse Latent Representation for Vision-Based Semantic Occupancy Prediction' (CVPR 2024)
->>>>>>> fa73087d965fa524940f395cd2bde3ba2b3861aa
