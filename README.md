@@ -16,7 +16,7 @@ Vision-based perception for autonomous driving requires an explicit modeling of 
 ![demo](./assets/sparseocc_demo.gif)
 
 ## Benchmark Results
-Occupancy prediction on [OpenOccupancy](https://github.com/JeffWang987/OpenOccupancy) validation set:
+Occupancy Prediction on OpenOccupancy validation set:
 ![openocc_val](./assets/openocc_val.png)
 Semantic Scene Completion on SemanticKITTI test set:
 ![kitti_val](./assets/kitti_val.png)
