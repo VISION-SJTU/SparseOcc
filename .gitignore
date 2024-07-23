@@ -1,5 +1,5 @@
 # other
-*.pth
+# *.pth
 projects/configs/dev
 run2.sh
 run_a100.sh
