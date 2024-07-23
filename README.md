@@ -1,7 +1,7 @@
 # SparseOcc: Rethinking Sparse Latent Representation for Vision-Based Semantic Occupancy Prediction (CVPR 2024)
 
 ## News
-- **[2024/07/01]** Our paper [OccGen](https://arxiv.org/abs/2404.15014) and [VEON](https://arxiv.org/abs/2407.12294) for multi-modal and open-vocabulary occpancy prediction are accepted by ECCV 2024.
+- **[2024/07/01]** Our paper [OccGen](https://arxiv.org/abs/2404.15014) and [VEON](https://arxiv.org/abs/2407.12294) for multi-modal and open-vocabulary occupancy prediction are accepted by ECCV 2024.
 - **[2024/04/15]** SparseOcc is on [Arxiv](https://arxiv.org/abs/2404.09502).
 - **[2023/03/08]** SparseOcc is accepted by CVPR 2024.
 
