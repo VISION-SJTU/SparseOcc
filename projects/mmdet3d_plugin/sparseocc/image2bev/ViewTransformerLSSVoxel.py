@@ -24,7 +24,6 @@ class ViewTransformerLiftSplatShootVoxel(ViewTransformerLSSBEVDepth):
         self.loss_depth_type = loss_depth_type
         self.cam_depth_range = self.grid_config['dbound']
         self.point_cloud_range = point_cloud_range
-        # print(self.nx)
     
     def get_downsampled_gt_depth(self, gt_depths):
         """
@@ -102,7 +101,6 @@ class ViewTransformerLiftSplatShootVoxel(ViewTransformerLSSBEVDepth):
         return final
 
     def forward(self, input):
-        # print(self.nx)
         (x, rots, trans, intrins, post_rots, post_trans, bda, mlp_input) = input[:8]
 
         B, N, C, H, W = x.shape
@@ -119,9 +117,7 @@ class ViewTransformerLiftSplatShootVoxel(ViewTransformerLSSBEVDepth):
 
         # Splat
         geom = self.get_geometry(rots, trans, intrins, post_rots, post_trans, bda)
-        # print(self.nx)
+
         bev_feat = self.voxel_pooling(geom, volume)
-        # print(self.nx)
-        # print(bev_feat.shape)
         
         return bev_feat, depth_prob
