@@ -498,8 +498,6 @@ class SparseMask2FormerOpenOccHead(MaskFormerHead):
                                   mask_embed, 
                                   self.empty_token.weight.view(1, -1))  # B, Q
 
-        # nonempty_pred = nonempty_pred.squeeze(0)  # n, q
-
         mask_3d = empty_pred.reshape(1, 1, 1, 1, -1)
         mask_3d = mask_3d.repeat((1, 
                                   ori_size[0], 
@@ -510,8 +508,6 @@ class SparseMask2FormerOpenOccHead(MaskFormerHead):
         nonempty_indices_expanded = coords.squeeze(1).repeat(1, mask_3d.shape[1], 1)  # [B, C, K]
         mask_3d.scatter_(2, nonempty_indices_expanded, nonempty_pred)
         mask_3d = rearrange(mask_3d, 'b q (h w z) -> b q h w z', h=ori_size[0], w=ori_size[1], z=ori_size[2])
-        # mask_3d[coords[:, 0], coords[:, 1], coords[:, 2], coords[:, 3], :] = nonempty_pred
-        # mask_3d = mask_3d.permute(0, 4, 1, 2, 3)
 
         
         ''' 对于一些样本数量较少的类别来说，经过 trilinear 插值 + 0.5 阈值，正样本直接消失 '''
