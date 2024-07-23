@@ -3,7 +3,7 @@ _base_ = [
     '../_base_/default_runtime.py'
 ]
 # work_dir = 'work_dirs/c3d_msitp_sparse-m2f-v2_detached_sedlayers0'
-work_dir = 'work_dirs/sparseocc_v2'
+work_dir = 'work_dirs/sparseocc_kitti'
 sync_bn = True
 plugin = True
 plugin_dir = "projects/mmdet3d_plugin/"

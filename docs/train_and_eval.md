@@ -1,7 +1,5 @@
 # Getting started
 
-Before start training, download the corresponding pretrained backbones from the [release page](https://github.com/zhangyp15/OccFormer/releases/tag/assets) and put them under the folder `ckpts/`. The weights include [EfficientNetB7](https://github.com/zhangyp15/OccFormer/releases/download/assets/efficientnet-b7_3rdparty_8xb32-aa_in1k_20220119-bf03951c.pth) for KITTI and [R50](https://github.com/zhangyp15/OccFormer/releases/download/assets/resnet50-0676ba61.pth) & [R101-DCN](https://github.com/zhangyp15/OccFormer/releases/download/assets/r101_dcn_fcos3d_pretrain.pth) for nuScenes.
-
 ## Training
 ```bash
 bash tools/dist_train.sh $CONFIG 8
