@@ -1,0 +1,9 @@
+timm
+open3d-python
+easydict
+fvcore
+einops
+torchmetrics
+setuptools==59.5.0
+spconv-cu113
+torch_scatter
