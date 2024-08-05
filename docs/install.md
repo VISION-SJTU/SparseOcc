@@ -30,7 +30,7 @@ Compared with the offical version, the mmdetection3d folder in this repo further
 ```shell
 cd mmdetection3d
 pip install -r requirements/runtime.txt
-python setup.py install
+python install -v -e .
 cd ..
 ```
 
@@ -38,7 +38,7 @@ cd ..
 ```shell
 cd SparseOcc
 export PYTHONPATH=“.”
-python install -v -e .
+python setup.py develop
 ```
 
 **d. Install other dependencies, like timm, einops, torchmetrics, etc.**
