@@ -6,7 +6,24 @@ from mmdet.datasets.builder import PIPELINES
 
 import torch
 from PIL import Image
-from .loading_nusc_imgs import mmlabNormalize
+# from .loading_nusc_imgs import mmlabNormalize
+
+def mmlabNormalize(img, img_norm_cfg=None):
+    from mmcv.image.photometric import imnormalize
+    if img_norm_cfg is None:
+        mean = np.array([123.675, 116.28, 103.53], dtype=np.float32)
+        std = np.array([58.395, 57.12, 57.375], dtype=np.float32)
+        to_rgb = True
+    else:
+        mean = np.array(img_norm_cfg['mean'], dtype=np.float32)
+        std = np.array(img_norm_cfg['std'], dtype=np.float32)
+        to_rgb = img_norm_cfg['to_rgb']
+    
+    img = imnormalize(np.array(img), mean, std, to_rgb)
+    img = torch.tensor(img).float().permute(2, 0, 1).contiguous()
+    
+    return img
+
 
 @PIPELINES.register_module()
 class LoadMultiViewImageFromFiles_SemanticKitti(object):
