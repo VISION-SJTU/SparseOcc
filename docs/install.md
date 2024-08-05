@@ -30,7 +30,7 @@ Compared with the offical version, the mmdetection3d folder in this repo further
 ```shell
 cd mmdetection3d
 pip install -r requirements/runtime.txt
-python install -v -e .
+pip install -v -e .
 cd ..
 ```
 
