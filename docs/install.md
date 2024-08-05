@@ -38,7 +38,7 @@ cd ..
 ```shell
 cd SparseOcc
 export PYTHONPATH=“.”
-python setup.py develop
+python install -v -e .
 ```
 
 **d. Install other dependencies, like timm, einops, torchmetrics, etc.**
