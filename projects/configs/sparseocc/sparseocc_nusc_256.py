@@ -301,7 +301,3 @@ evaluation = dict(
     save_best='nuScenes_SSC_mIoU',
     rule='greater',
 )
-
-custom_hooks = [
-    dict(type='OccEfficiencyHook'),
-]
